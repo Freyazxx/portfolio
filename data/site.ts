@@ -28,7 +28,7 @@ export const site = {
   resume: "/resume.pdf", // TODO: drop resume.pdf into /public
 
   // --- SEO ---
-  url: "https://xiaoxuan-zhou.com", // TODO: replace with your deployed domain
+  url: "https://portfolio-t3bx.vercel.app",
   title: "Xiaoxuan Zhou — Language, AI & Global Experience",
   description:
     "Personal portfolio of Xiaoxuan Zhou, exploring the intersection of language, AI, global operations and cross-cultural communication.",
