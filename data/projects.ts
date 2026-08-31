@@ -27,7 +27,7 @@ export const hcrProject = {
     "Huawei Global Customer Satisfaction Research",
     "华为全球客户满意度调研",
   ),
-  role: L("Global Customer Research Intern", "全球客户研究实习生"),
+  role: L("Project Management Intern", "项目管理实习生"),
   period: L("May 2026 — Aug 2026", "2026 年 5 月 — 8 月"),
 
   overview: L(
@@ -137,7 +137,7 @@ export const aiLanguageProject = {
   title: L("MT+PE", "MT+PE"),
   subtitle: L("Oil & Energy Domain LLM Corpus", "油气能源领域大模型语料库"),
   kicker: L("AI + Language Experiment", "AI + 语言实验"),
-  period: L("2025", "2025"),
+  period: L("Sep 2024 — Dec 2024", "2024.09 – 2024.12"),
 
   overview: L(
     "A self-directed, fully online project: building and quality-assessing a 100,000+ word English–Chinese bilingual corpus for the oil and energy domain, then using LLMs to evaluate translation quality inside a human-in-the-loop workflow. Less an academic paper than a hands-on experiment in what language work becomes when AI enters the loop.",

@@ -78,13 +78,13 @@ export function Hero() {
               href="/about"
               className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm text-paper transition-colors hover:bg-accent"
             >
-              {lang === "zh" ? "查看我的旅程" : "View My Journey"}
+              {lang === "zh" ? "我的旅程" : "View My Journey"}
             </Link>
             <Link
               href="/hcr"
               className="inline-flex items-center gap-2 rounded-full border border-line-strong px-6 py-3 text-sm text-ink transition-colors hover:border-ink"
             >
-              {lang === "zh" ? "查看经历" : "View Experience"}
+              {lang === "zh" ? "我的经历" : "View Experience"}
             </Link>
             <Link
               href={site.resume}

@@ -80,7 +80,7 @@ export default function Home() {
             <h2 className="mt-6 max-w-3xl text-3xl leading-tight md:text-5xl">
               {lang === "zh" ? (
                 <>
-                  受训于语言，好奇于 AI，<em className="text-accent">工作于世界各地。</em>
+                  从语言出发，对 AI 充满好奇，<em className="text-accent">在世界各地工作。</em>
                 </>
               ) : (
                 <>
@@ -91,7 +91,7 @@ export default function Home() {
             </h2>
             <p className="mt-7 max-w-2xl text-base leading-relaxed text-muted-strong md:text-lg">
               {lang === "zh"
-                ? "我学习翻译，后来发现，真正有意思的工作发生在边界处——意义在文化之间流转的地方，AI 改变语言工作方式的地方，以及真实的人跨越时区相互协调的地方。"
+                ? "我学习翻译，后来发现真正有趣的工作往往发生在边界处——意义在文化之间流转的地方，AI 重塑语言工作方式的地方，以及真实的人跨越时区彼此协作的地方。"
                 : "I studied translation, then discovered the interesting work happens at the edges — where meaning shifts between cultures, where AI changes how language gets done, and where real people coordinate across time zones."}
             </p>
           </Reveal>

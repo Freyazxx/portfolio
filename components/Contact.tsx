@@ -10,7 +10,7 @@ export function Contact() {
   const { lang } = useLang();
 
   const links = [
-    { label: pick(lang, { en: "Email", zh: "邮箱" }), href: site.socials.email, external: false },
+    { label: site.email, href: site.socials.email, external: false },
     { label: "GitHub", href: site.socials.github, external: true },
     { label: "LinkedIn", href: site.socials.linkedin, external: true },
     { label: pick(lang, { en: "Résumé", zh: "简历" }), href: site.resume, external: false },
@@ -24,7 +24,7 @@ export function Contact() {
         </h2>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-strong md:text-lg">
           {lang === "zh"
-            ? "对全球性的机会、合作与好的对话保持开放——关于语言、AI，或是在路上的世界是什么样子。"
+            ? "对全球性的机会、合作与好的对话保持开放——关于语言、AI，或旅途中的世界。"
             : "Open to global opportunities, collaborations and good conversations — about language, AI, or what the world looks like from the road."}
         </p>
       </Reveal>

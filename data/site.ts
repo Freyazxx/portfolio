@@ -14,7 +14,7 @@ export const site = {
     linkedin: "", // 暂无 LinkedIn 账户，留空则不显示；创建后可填入 URL
     github: "https://github.com/Freyazxx",
   },
-  resume: "/resume.pdf", // TODO: drop resume.pdf into /public
+  resume: "/Xiaoxuan-Zhou-Resume.pdf",
 
   // --- SEO / shared URL ---
   url: "https://xiaoxuanzhou.vercel.app",
@@ -24,7 +24,7 @@ export const site = {
   tagline: L("Language × AI × Global Experience", "语言 × AI × 全球经历"),
   headline: L(
     "Exploring how language, AI and global experiences connect people.",
-    "探索语言、AI 与全球经历如何把人连接在一起。",
+    "探索语言、AI 与全球经历如何将人与人彼此相连。",
   ),
   intro: L(
     "MTI student, AI explorer, language enthusiast and global storyteller.",

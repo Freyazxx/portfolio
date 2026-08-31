@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { Skills } from "@/components/Skills";
 import { Reveal } from "@/components/motion/Reveal";
-import { experience } from "@/data/experience";
+import { education, work } from "@/data/experience";
 import { skillGroups } from "@/data/skills";
 import { site } from "@/data/site";
 import { useLang } from "@/lib/language";
@@ -104,21 +104,39 @@ export default function AboutPage() {
         </Reveal>
       </section>
 
-      {/* Experience */}
+      {/* Work / internships */}
       <section className="mt-20 md:mt-28">
         <Reveal>
           <SectionHeading
-            eyebrow={lang === "zh" ? "旅程" : "Journey"}
-            title={lang === "zh" ? "教育与经历。" : "Education & experience."}
+            eyebrow={lang === "zh" ? "经历" : "Experience"}
+            title={lang === "zh" ? "实习与项目经历。" : "Internships & work."}
             description={
               lang === "zh"
-                ? "从翻译出发，进入语言、技术与全球工作交叠的领域。"
-                : "A path from translation into the space where language, technology and global work overlap."
+                ? "从陪同口译到项目管理，在不同场景里连接人与语言。"
+                : "From escort interpreting to project management, connecting people and language across very different settings."
             }
           />
         </Reveal>
         <div className="mt-12">
-          <ExperienceTimeline entries={experience} />
+          <ExperienceTimeline entries={work} />
+        </div>
+      </section>
+
+      {/* Education */}
+      <section className="mt-20 md:mt-28">
+        <Reveal>
+          <SectionHeading
+            eyebrow={lang === "zh" ? "教育" : "Education"}
+            title={lang === "zh" ? "教育经历。" : "Education."}
+            description={
+              lang === "zh"
+                ? "从翻译学士到英语翻译硕士，一路扎根语言。"
+                : "From a BA in translation to an MTI, rooted in language throughout."
+            }
+          />
+        </Reveal>
+        <div className="mt-12">
+          <ExperienceTimeline entries={education} />
         </div>
       </section>
 

@@ -10,7 +10,7 @@ export function Footer() {
   const { lang } = useLang();
 
   const socialLinks = [
-    { label: pick(lang, { en: "Email", zh: "邮箱" }), href: site.socials.email, external: false },
+    { label: site.email, href: site.socials.email, external: false },
     { label: "GitHub", href: site.socials.github, external: true },
     { label: "LinkedIn", href: site.socials.linkedin, external: true },
   ].filter((link) => link.href);

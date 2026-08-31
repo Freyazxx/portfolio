@@ -23,16 +23,7 @@ export function ExperienceTimeline({
               {pick(lang, e.period)}
             </div>
             <div>
-              <span className="eyebrow text-[0.6rem]">
-                {e.type === "Education"
-                  ? lang === "zh"
-                    ? "教育"
-                    : "Education"
-                  : lang === "zh"
-                    ? "经历"
-                    : "Experience"}
-              </span>
-              <h3 className="mt-3 font-serif text-2xl leading-tight text-ink">
+              <h3 className="font-serif text-2xl leading-tight text-ink">
                 {pick(lang, e.role)}
               </h3>
               <p className="mt-1 text-sm text-muted-strong">
@@ -41,10 +32,26 @@ export function ExperienceTimeline({
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
                 {pick(lang, e.summary)}
               </p>
+              {e.bullets && (
+                <ul className="mt-4 max-w-2xl space-y-2.5">
+                  {pick(lang, e.bullets).map((b) => (
+                    <li
+                      key={b}
+                      className="flex gap-3 text-sm leading-relaxed text-muted"
+                    >
+                      <span
+                        aria-hidden
+                        className="mt-[0.55em] h-1 w-1 shrink-0 rounded-full bg-accent"
+                      />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
               {e.href && (
                 <Link
                   href={e.href}
-                  className="mt-4 inline-flex items-center gap-2 text-sm text-accent transition-colors hover:text-ink"
+                  className="mt-5 inline-flex items-center gap-2 text-sm text-accent transition-colors hover:text-ink"
                 >
                   {lang === "zh" ? "阅读这个故事" : "Read the story"}
                   <span aria-hidden>→</span>
