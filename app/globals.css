@@ -5,16 +5,16 @@
 --------------------------------------------------------------------------- */
 @theme {
   /* Color */
-  --color-paper: #f6f3ee; /* warm paper background */
-  --color-paper-deep: #efeae2; /* slightly deeper paper */
-  --color-ink: #1c1917; /* warm near-black */
-  --color-ink-soft: #2b2723;
-  --color-muted: #7a736a; /* warm gray for secondary text */
-  --color-muted-strong: #57524b;
-  --color-accent: #b4552d; /* terracotta — used sparingly */
-  --color-accent-soft: #c97a55;
-  --color-line: #e7e2da; /* hairline */
-  --color-line-strong: #d8d1c6;
+  --color-paper: #faf4f5; /* light pink paper background */
+  --color-paper-deep: #f4e8eb; /* slightly deeper pink */
+  --color-ink: #241b20; /* warm near-black, plum-tinted */
+  --color-ink-soft: #33282d;
+  --color-muted: #7d6d74; /* rosy gray for secondary text */
+  --color-muted-strong: #5a4b51;
+  --color-accent: #c76d8a; /* dusty rose — used sparingly */
+  --color-accent-soft: #d99aa9;
+  --color-line: #f0e1e5; /* hairline */
+  --color-line-strong: #e3cdd5;
 
   /* Radii */
   --radius-soft: 4px;

@@ -27,11 +27,11 @@ interface SmartImageProps {
 
 /* Warm, editorial placeholder tones — picked deterministically from alt. */
 const TONES = [
-  { bg: "#e9e2d6", frame: "#d9ccb6", ink: "#6b6255" }, // sand
-  { bg: "#e7dcd2", frame: "#d4b9a7", ink: "#6e5b4d" }, // clay
-  { bg: "#e0e3d5", frame: "#c7cead", ink: "#5b6350" }, // sage
-  { bg: "#e7e2da", frame: "#d0c8bb", ink: "#665f55" }, // stone
-  { bg: "#e9ddd3", frame: "#d5beb0", ink: "#6d594e" }, // blush clay
+  { bg: "#f4e7ec", frame: "#e4ccd4", ink: "#8a6472" }, // rose sand
+  { bg: "#f1e4e8", frame: "#ddc3cc", ink: "#8a6673" }, // blush
+  { bg: "#ece6ea", frame: "#d6c8cf", ink: "#78636d" }, // mauve
+  { bg: "#efe7ea", frame: "#dccbd2", ink: "#7d6871" }, // stone rose
+  { bg: "#f2e6ea", frame: "#e0c7cf", ink: "#8a626f" }, // dusty blush
 ];
 
 function hash(str: string): number {

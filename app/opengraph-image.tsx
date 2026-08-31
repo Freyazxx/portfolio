@@ -14,8 +14,8 @@ export default function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#f6f3ee",
-          color: "#1c1917",
+          background: "#faf4f5",
+          color: "#241b20",
           padding: 64,
           fontFamily: "sans-serif",
         }}
@@ -25,13 +25,13 @@ export default function Image() {
           style={{
             position: "absolute",
             inset: 28,
-            border: "1px solid #e7e2da",
+            border: "1px solid #f0e1e5",
           }}
         />
 
         <div style={{ display: "flex", alignItems: "baseline", gap: 16 }}>
-          <span style={{ fontSize: 40, color: "#b4552d" }}>XZ</span>
-          <span style={{ fontSize: 22, color: "#7a736a", letterSpacing: "0.2em" }}>
+          <span style={{ fontSize: 40, color: "#c76d8a" }}>XZ</span>
+          <span style={{ fontSize: 22, color: "#7d6d74", letterSpacing: "0.2em" }}>
             PORTFOLIO
           </span>
         </div>
@@ -50,7 +50,7 @@ export default function Image() {
           <div
             style={{
               fontSize: 34,
-              color: "#b4552d",
+              color: "#c76d8a",
               marginTop: 28,
               letterSpacing: "0.01em",
             }}
@@ -62,7 +62,7 @@ export default function Image() {
         <div
           style={{
             fontSize: 20,
-            color: "#7a736a",
+            color: "#7d6d74",
             letterSpacing: "0.12em",
             textTransform: "uppercase",
           }}
