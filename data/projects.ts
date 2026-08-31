@@ -23,8 +23,7 @@ export const hcrProject = {
   department: "Technology Key Account Division",
   project: "Huawei Global Customer Satisfaction Research",
   role: "Global Customer Research Intern",
-  // TODO: confirm exact internship dates
-  period: "2024 — 2025",
+  period: "May 2026 — Aug 2026",
 
   overview:
     "A customer satisfaction research program for Huawei, run entirely online and spanning European markets across more than two dozen languages. The project split into two halves that demanded two different skills: the human half — reaching and coordinating real customers across borders and time zones — and the technical half, where I owned quality assurance for a multilingual survey questionnaire and helped build the AI-assisted workflow that made it scale.",

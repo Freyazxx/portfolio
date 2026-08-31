@@ -34,7 +34,7 @@ export const experience: ExperienceEntry[] = [
     featured: true,
   },
   {
-    period: "2024 — 2025", // TODO: confirm exact internship dates
+    period: "May 2026 — Aug 2026",
     role: "Global Customer Research Intern",
     org: "HCR 慧辰股份 · Technology Key Account Division",
     type: "Experience",

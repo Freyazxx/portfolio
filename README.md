@@ -101,7 +101,6 @@ Recommended size: ~1600px on the long edge, JPEG, under ~500 KB for fast loads.
 Search for `TODO` in `data/` — these need your real details before sharing:
 
 - deployed domain (`data/site.ts` → `url`)
-- HCR internship exact dates (`data/projects.ts`, `data/experience.ts`)
 - FISU story text (`app/global-events/page.tsx`) — photos already in place
 
 ## Language / i18n
