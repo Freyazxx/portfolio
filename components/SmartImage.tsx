@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { withBasePath } from "@/lib/base-path";
 import { useLang } from "@/lib/language";
 import { pick, type Localized } from "@/lib/lang";
 
@@ -103,7 +104,7 @@ export function SmartImage({
       <div className="relative overflow-hidden" style={{ aspectRatio: ratio }}>
         {showImage ? (
           <Image
-            src={src as string}
+            src={withBasePath(src as string)}
             alt={altText}
             fill
             sizes={sizes ?? "(max-width: 768px) 100vw, 50vw"}

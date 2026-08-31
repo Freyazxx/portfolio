@@ -1,6 +1,7 @@
 "use client";
 
 import { site } from "@/data/site";
+import { withBasePath } from "@/lib/base-path";
 import { useLang } from "@/lib/language";
 import { pick } from "@/lib/lang";
 import { Reveal } from "./motion/Reveal";
@@ -13,7 +14,7 @@ export function Contact() {
     { label: site.email, href: site.socials.email, external: false },
     { label: "GitHub", href: site.socials.github, external: true },
     { label: "LinkedIn", href: site.socials.linkedin, external: true },
-    { label: pick(lang, { en: "Résumé", zh: "简历" }), href: site.resume, external: false },
+    { label: pick(lang, { en: "Résumé", zh: "简历" }), href: withBasePath(site.resume), external: false },
   ].filter((link) => link.href);
 
   return (
