@@ -6,12 +6,16 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { navItems } from "@/data/nav";
 import { site } from "@/data/site";
+import { useLang } from "@/lib/language";
+import { pick } from "@/lib/lang";
+import { LanguageToggle } from "@/components/LanguageToggle";
 import { cn } from "@/lib/utils";
 
 /** Top bar + full-screen drawer — mobile / tablet only. */
 export function NavbarMobile() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { lang } = useLang();
 
   // Lock body scroll while the drawer is open.
   useEffect(() => {
@@ -29,35 +33,38 @@ export function NavbarMobile() {
             {site.initials}
             <span className="text-accent">.</span>
           </span>
-          <span className="text-sm text-muted-strong">{site.name}</span>
+          <span className="text-sm text-muted-strong">{pick(lang, site.name)}</span>
         </Link>
 
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-[5px]"
-        >
-          <span
-            className={cn(
-              "block h-px w-6 bg-ink transition-transform duration-300",
-              open && "translate-y-[3px] rotate-45",
-            )}
-          />
-          <span
-            className={cn(
-              "block h-px w-6 bg-ink transition-opacity duration-300",
-              open && "opacity-0",
-            )}
-          />
-          <span
-            className={cn(
-              "block h-px w-6 bg-ink transition-transform duration-300",
-              open && "-translate-y-[9px] -rotate-45",
-            )}
-          />
-        </button>
+        <div className="flex items-center gap-2">
+          <LanguageToggle />
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="flex h-10 w-10 flex-col items-center justify-center gap-[5px]"
+          >
+            <span
+              className={cn(
+                "block h-px w-6 bg-ink transition-transform duration-300",
+                open && "translate-y-[3px] rotate-45",
+              )}
+            />
+            <span
+              className={cn(
+                "block h-px w-6 bg-ink transition-opacity duration-300",
+                open && "opacity-0",
+              )}
+            />
+            <span
+              className={cn(
+                "block h-px w-6 bg-ink transition-transform duration-300",
+                open && "-translate-y-[9px] -rotate-45",
+              )}
+            />
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -92,15 +99,17 @@ export function NavbarMobile() {
                       <span className="eyebrow text-[0.6rem]">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="font-serif text-2xl">{item.label}</span>
+                      <span className="font-serif text-2xl">
+                        {pick(lang, item.label)}
+                      </span>
                     </Link>
                   </motion.li>
                 );
               })}
             </ul>
             <div className="px-5 pb-10 text-sm text-muted">
-              <p>{site.location}</p>
-              <p className="mt-1 text-xs opacity-70">{site.builtWith}</p>
+              <p>{pick(lang, site.location)}</p>
+              <p className="mt-1 text-xs opacity-70">{pick(lang, site.builtWith)}</p>
             </div>
           </motion.nav>
         )}

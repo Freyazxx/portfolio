@@ -5,11 +5,15 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { navItems } from "@/data/nav";
 import { site } from "@/data/site";
+import { useLang } from "@/lib/language";
+import { pick } from "@/lib/lang";
+import { LanguageToggle } from "@/components/LanguageToggle";
 import { cn } from "@/lib/utils";
 
 /** Fixed left "directory of a life" — desktop only. */
 export function Sidebar() {
   const pathname = usePathname();
+  const { lang } = useLang();
 
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden w-[19rem] flex-col justify-between border-r border-line bg-paper/80 px-9 py-10 backdrop-blur-sm lg:flex">
@@ -21,10 +25,10 @@ export function Sidebar() {
             <span className="text-accent">.</span>
           </span>
           <span className="mt-3 block text-sm text-muted-strong">
-            {site.name}
+            {pick(lang, site.name)}
           </span>
           <span className="mt-1 block text-xs text-muted">
-            {site.tagline}
+            {pick(lang, site.tagline)}
           </span>
         </Link>
 
@@ -59,11 +63,11 @@ export function Sidebar() {
                           active && "italic text-accent",
                         )}
                       >
-                        {item.label}
+                        {pick(lang, item.label)}
                       </span>
                     </span>
                     <span className="mt-1 pl-[2.1rem] text-[0.7rem] leading-tight text-muted opacity-70">
-                      {item.note}
+                      {pick(lang, item.note)}
                     </span>
                   </Link>
                 </li>
@@ -75,13 +79,14 @@ export function Sidebar() {
 
       {/* Footer of sidebar */}
       <div className="space-y-4 border-t border-line pt-6">
+        <LanguageToggle />
         <p className="text-xs leading-relaxed text-muted">
-          {site.location}
+          {pick(lang, site.location)}
           <br />
-          {site.currently}
+          {pick(lang, site.currently)}
         </p>
         <p className="text-[0.65rem] leading-relaxed text-muted opacity-70">
-          {site.builtWith}
+          {pick(lang, site.builtWith)}
         </p>
       </div>
     </aside>

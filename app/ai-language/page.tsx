@@ -1,41 +1,40 @@
-import type { Metadata } from "next";
+"use client";
+
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
 import { aiLanguageProject } from "@/data/projects";
-
-export const metadata: Metadata = {
-  title: "MT+PE — AI & Language · Xiaoxuan Zhou",
-  description:
-    "An AI + language experiment: building and quality-assessing a 100,000+ word oil & energy domain bilingual corpus with LLM evaluation and human post-editing.",
-};
+import { useLang } from "@/lib/language";
+import { pick } from "@/lib/lang";
 
 const { highlights, process } = aiLanguageProject;
 
 export default function AiLanguagePage() {
+  const { lang } = useLang();
+
   return (
     <div className="mx-auto max-w-6xl px-6 pt-16 md:px-10 md:pt-24">
       <PageHeader
-        eyebrow={aiLanguageProject.kicker}
+        eyebrow={pick(lang, aiLanguageProject.kicker)}
         title={
           <>
-            MT+PE
+            {pick(lang, aiLanguageProject.title)}
             <br />
             <span className="text-2xl font-normal text-muted-strong md:text-4xl">
-              {aiLanguageProject.subtitle}
+              {pick(lang, aiLanguageProject.subtitle)}
             </span>
           </>
         }
-        intro={aiLanguageProject.overview}
+        intro={pick(lang, aiLanguageProject.overview)}
         meta={
           <>
             <span>
-              <span className="text-muted">Type</span> · Language Data × LLM
-              Evaluation
+              <span className="text-muted">{lang === "zh" ? "类型" : "Type"}</span> ·{" "}
+              {lang === "zh" ? "语言数据 × 大模型评估" : "Language Data × LLM Evaluation"}
             </span>
             <span>
-              <span className="text-muted">Period</span> ·{" "}
-              {aiLanguageProject.period}
+              <span className="text-muted">{lang === "zh" ? "时间" : "Period"}</span> ·{" "}
+              {pick(lang, aiLanguageProject.period)}
             </span>
           </>
         }
@@ -45,20 +44,32 @@ export default function AiLanguagePage() {
       <section className="mt-20 md:mt-28">
         <Reveal>
           <SectionHeading
-            eyebrow="What it is"
-            title="Four ideas in one project."
-            description="Not an academic paper — a hands-on experiment in what language work becomes when AI is in the loop."
+            eyebrow={lang === "zh" ? "它是什么" : "What it is"}
+            title={lang === "zh" ? "一个项目里的四个想法。" : "Four ideas in one project."}
+            description={
+              lang === "zh"
+                ? "不是一篇学术论文——而是一次亲手实验，看看当 AI 进入流程后，语言工作会变成什么样。"
+                : "Not an academic paper — a hands-on experiment in what language work becomes when AI is in the loop."
+            }
           />
         </Reveal>
 
         <div className="mt-12 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2">
           {highlights.map((h, i) => (
-            <Reveal key={h.label} delay={i * 0.06} className="bg-paper p-8 md:p-10">
+            <Reveal
+              key={pick(lang, h.label)}
+              delay={i * 0.06}
+              className="bg-paper p-8 md:p-10"
+            >
               <span className="eyebrow text-[0.6rem]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-5 font-serif text-2xl text-ink">{h.label}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{h.desc}</p>
+              <h3 className="mt-5 font-serif text-2xl text-ink">
+                {pick(lang, h.label)}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                {pick(lang, h.desc)}
+              </p>
             </Reveal>
           ))}
         </div>
@@ -68,24 +79,24 @@ export default function AiLanguagePage() {
       <section className="mt-20 border-t border-line pt-16 md:mt-28 md:pt-20">
         <Reveal>
           <SectionHeading
-            eyebrow="How it worked"
-            title="From raw text to reusable corpus."
+            eyebrow={lang === "zh" ? "它是如何运作的" : "How it worked"}
+            title={lang === "zh" ? "从原始文本到可复用语料。" : "From raw text to reusable corpus."}
           />
         </Reveal>
 
         <ol className="mt-12">
           {process.map((p, i) => (
-            <Reveal key={p.title} delay={i * 0.05}>
+            <Reveal key={pick(lang, p.title)} delay={i * 0.05}>
               <li className="grid gap-2 border-t border-line py-7 md:grid-cols-[80px_1fr] md:gap-10">
                 <span className="font-serif text-2xl text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
                   <h4 className="font-serif text-xl text-ink md:text-2xl">
-                    {p.title}
+                    {pick(lang, p.title)}
                   </h4>
                   <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
-                    {p.desc}
+                    {pick(lang, p.desc)}
                   </p>
                 </div>
               </li>
@@ -97,9 +108,9 @@ export default function AiLanguagePage() {
       {/* Takeaway */}
       <section className="mt-20 border-t border-line pt-16 md:pt-20">
         <Reveal>
-          <p className="eyebrow">What I take from it</p>
+          <p className="eyebrow">{lang === "zh" ? "我的收获" : "What I take from it"}</p>
           <p className="mt-6 max-w-3xl font-serif text-2xl leading-snug text-ink md:text-3xl">
-            {aiLanguageProject.takeaway}
+            {pick(lang, aiLanguageProject.takeaway)}
           </p>
         </Reveal>
       </section>

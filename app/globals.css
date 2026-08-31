@@ -21,11 +21,12 @@
 }
 
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-    sans-serif;
-  --font-serif: var(--font-fraunces), ui-serif, Georgia, "Times New Roman",
-    serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", monospace;
+  --font-sans: var(--font-inter), "PingFang SC", "Noto Sans SC",
+    "Microsoft YaHei", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-fraunces), "Noto Serif SC", "Songti SC", "STSong",
+    "SimSun", ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-jetbrains-mono), "PingFang SC", ui-monospace,
+    "SF Mono", monospace;
 }
 
 /* ---------------------------------------------------------------------------

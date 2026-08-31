@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import { site } from "@/data/site";
+import { LanguageProvider } from "@/lib/language";
 import { Sidebar } from "@/components/Sidebar";
 import { NavbarMobile } from "@/components/NavbarMobile";
 import { Footer } from "@/components/Footer";
@@ -26,13 +27,13 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: site.title,
-  description: site.description,
+  title: site.title.en,
+  description: site.description.en,
   openGraph: {
-    title: site.title,
-    description: site.description,
+    title: site.title.en,
+    description: site.description.en,
     url: site.url,
-    siteName: site.name,
+    siteName: site.name.en,
     type: "website",
     locale: "en_US",
     images: [
@@ -40,14 +41,14 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: site.title,
+        alt: site.title.en,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: site.title,
-    description: site.description,
+    title: site.title.en,
+    description: site.description.en,
     images: ["/opengraph-image"],
   },
   robots: { index: true, follow: true },
@@ -65,12 +66,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full bg-paper text-ink">
         <div aria-hidden className="grain" />
-        <Sidebar />
-        <NavbarMobile />
-        <main className="min-h-screen lg:pl-[19rem]">
-          {children}
-          <Footer />
-        </main>
+        <LanguageProvider>
+          <Sidebar />
+          <NavbarMobile />
+          <main className="min-h-screen lg:pl-[19rem]">
+            {children}
+            <Footer />
+          </main>
+        </LanguageProvider>
       </body>
     </html>
   );

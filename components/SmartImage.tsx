@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useLang } from "@/lib/language";
+import { pick, type Localized } from "@/lib/lang";
 
 /**
  * Unified image component.
@@ -13,10 +15,10 @@ import { cn } from "@/lib/utils";
 
 interface SmartImageProps {
   src?: string;
-  alt: string;
+  alt: Localized<string>;
   ratio?: string; // "1/1" | "3/4" | "4/5" | "4/3" | "3/2" | "16/10"
   className?: string;
-  caption?: string;
+  caption?: Localized<string>;
   priority?: boolean;
   sizes?: string;
   /** large serif monogram shown on the placeholder (e.g. "XZ") */
@@ -90,8 +92,11 @@ export function SmartImage({
   monogram,
   hover = true,
 }: SmartImageProps) {
+  const { lang } = useLang();
   const [errored, setErrored] = useState(false);
   const showImage = Boolean(src) && !errored;
+  const altText = pick(lang, alt);
+  const captionText = caption ? pick(lang, caption) : undefined;
 
   return (
     <figure className={cn("group", className)}>
@@ -99,7 +104,7 @@ export function SmartImage({
         {showImage ? (
           <Image
             src={src as string}
-            alt={alt}
+            alt={altText}
             fill
             sizes={sizes ?? "(max-width: 768px) 100vw, 50vw"}
             priority={priority}
@@ -111,13 +116,13 @@ export function SmartImage({
             )}
           />
         ) : (
-          <Placeholder alt={alt} monogram={monogram} />
+          <Placeholder alt={altText} monogram={monogram} />
         )}
       </div>
-      {caption && (
+      {captionText && (
         <figcaption className="mt-3 flex items-baseline gap-2 text-sm text-muted">
           <span aria-hidden className="block h-px w-4 bg-line-strong" />
-          {caption}
+          {captionText}
         </figcaption>
       )}
     </figure>

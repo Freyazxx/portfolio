@@ -1,24 +1,13 @@
 /**
  * Global site configuration.
- * Edit everything here — name, tagline, links, resume — without touching components.
+ * Text fields are localized (en/zh); use `pick(lang, field)` to read them.
  */
 
+import { L } from "@/lib/lang";
+
 export const site = {
-  name: "Xiaoxuan Zhou",
-  firstName: "Xiaoxuan",
-  lastName: "Zhou",
+  // Shared (language-independent)
   initials: "XZ",
-
-  // Hero positioning
-  tagline: "Language × AI × Global Experience",
-  headline: "Exploring how language, AI and global experiences connect people.",
-  intro:
-    "MTI student, AI explorer, language enthusiast and global storyteller.",
-
-  location: "Shanghai / Xi'an",
-  currently: "MTI @ Northwest University",
-
-  // --- Contact / socials (placeholders — replace before sharing) ---
   email: "1208195321@qq.com",
   socials: {
     email: "mailto:1208195321@qq.com",
@@ -27,15 +16,41 @@ export const site = {
   },
   resume: "/resume.pdf", // TODO: drop resume.pdf into /public
 
-  // --- SEO ---
+  // --- SEO / shared URL ---
   url: "https://portfolio-t3bx.vercel.app",
-  title: "Xiaoxuan Zhou — Language, AI & Global Experience",
-  description:
+
+  // Localized
+  name: L("Xiaoxuan Zhou", "周晓萱"),
+  tagline: L("Language × AI × Global Experience", "语言 × AI × 全球经历"),
+  headline: L(
+    "Exploring how language, AI and global experiences connect people.",
+    "探索语言、AI 与全球经历如何把人连接在一起。",
+  ),
+  intro: L(
+    "MTI student, AI explorer, language enthusiast and global storyteller.",
+    "翻译硕士、AI 探索者、语言爱好者与全球故事的讲述者。",
+  ),
+  location: L("Shanghai / Xi'an", "上海 / 西安"),
+  currently: L("MTI @ Northwest University", "西北大学 · 翻译硕士（MTI）"),
+
+  title: L(
+    "Xiaoxuan Zhou — Language, AI & Global Experience",
+    "周晓萱 — 语言 × AI × 全球经历",
+  ),
+  description: L(
     "Personal portfolio of Xiaoxuan Zhou, exploring the intersection of language, AI, global operations and cross-cultural communication.",
+    "周晓萱的个人作品集，探索语言、AI、全球运营与跨文化沟通的交汇。",
+  ),
 
   // --- Vibe-coding note (shown in footer) ---
-  builtWith: "Designed & built through human × AI collaboration.",
-  builtWithDetail: "Built with Claude Code / Codex + human direction.",
+  builtWith: L(
+    "Designed & built through human × AI collaboration.",
+    "由人类 × AI 协作设计并打造。",
+  ),
+  builtWithDetail: L(
+    "Built with Claude Code / Codex + human direction.",
+    "使用 Claude Code / Codex 构建，由人类主导方向。",
+  ),
 } as const;
 
 export type Site = typeof site;

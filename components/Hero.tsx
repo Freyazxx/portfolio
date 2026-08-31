@@ -4,6 +4,8 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { site } from "@/data/site";
 import { profilePhotos } from "@/data/gallery";
+import { useLang } from "@/lib/language";
+import { pick } from "@/lib/lang";
 import { SmartImage } from "./SmartImage";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -20,6 +22,7 @@ const item = {
 
 export function Hero() {
   const reduce = useReducedMotion();
+  const { lang } = useLang();
   const initial = reduce ? "show" : "hidden";
 
   return (
@@ -33,34 +36,41 @@ export function Hero() {
           className="lg:col-span-7"
         >
           <motion.p variants={item} className="eyebrow">
-            Portfolio — {new Date().getFullYear()}
+            {lang === "zh" ? "作品集" : "Portfolio"} — {new Date().getFullYear()}
           </motion.p>
 
           <motion.h1
             variants={item}
             className="mt-7 font-serif text-[3.25rem] leading-[0.98] tracking-tight text-ink md:text-8xl"
           >
-            Xiaoxuan
-            <br />
-            Zhou<span className="text-accent">.</span>
+            {lang === "zh" ? (
+              "周晓萱"
+            ) : (
+              <>
+                Xiaoxuan
+                <br />
+                Zhou
+              </>
+            )}
+            <span className="text-accent">.</span>
           </motion.h1>
 
           <motion.p
             variants={item}
             className="mt-8 font-serif text-xl italic text-muted-strong md:text-2xl"
           >
-            {site.tagline}
+            {pick(lang, site.tagline)}
           </motion.p>
 
           <motion.p
             variants={item}
             className="mt-5 max-w-xl text-base leading-relaxed text-muted-strong md:text-lg"
           >
-            {site.headline}
+            {pick(lang, site.headline)}
           </motion.p>
 
           <motion.p variants={item} className="mt-3 text-sm text-muted">
-            {site.intro}
+            {pick(lang, site.intro)}
           </motion.p>
 
           <motion.div variants={item} className="mt-9 flex flex-wrap gap-3">
@@ -68,19 +78,19 @@ export function Hero() {
               href="/about"
               className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm text-paper transition-colors hover:bg-accent"
             >
-              View My Journey
+              {lang === "zh" ? "查看我的旅程" : "View My Journey"}
             </Link>
             <Link
               href="/hcr"
               className="inline-flex items-center gap-2 rounded-full border border-line-strong px-6 py-3 text-sm text-ink transition-colors hover:border-ink"
             >
-              View Experience
+              {lang === "zh" ? "查看经历" : "View Experience"}
             </Link>
             <Link
               href={site.resume}
               className="inline-flex items-center gap-2 px-2 py-3 text-sm text-muted-strong underline-offset-4 transition-colors hover:text-accent hover:underline"
             >
-              Download Resume
+              {lang === "zh" ? "下载简历" : "Download Resume"}
               <span aria-hidden>→</span>
             </Link>
           </motion.div>

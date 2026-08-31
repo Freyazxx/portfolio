@@ -1,8 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import { navItems } from "@/data/nav";
 import { site } from "@/data/site";
+import { useLang } from "@/lib/language";
+import { pick } from "@/lib/lang";
 
 export function Footer() {
+  const { lang } = useLang();
+
+  const socialLinks = [
+    { label: pick(lang, { en: "Email", zh: "邮箱" }), href: site.socials.email, external: false },
+    { label: "GitHub", href: site.socials.github, external: true },
+    { label: "LinkedIn", href: site.socials.linkedin, external: true },
+  ].filter((link) => link.href);
+
   return (
     <footer className="border-t border-line">
       <div className="mx-auto max-w-5xl px-6 py-14 md:px-10 lg:py-16">
@@ -14,17 +26,19 @@ export function Footer() {
               <span className="text-accent">.</span>
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-strong">
-              {site.builtWith}
+              {pick(lang, site.builtWith)}
             </p>
             <p className="mt-2 text-xs leading-relaxed text-muted">
-              {site.builtWithDetail}
+              {pick(lang, site.builtWithDetail)}
             </p>
           </div>
 
           {/* Right — quick nav + socials */}
           <div className="flex flex-col gap-8 sm:flex-row sm:gap-16">
             <nav aria-label="Footer">
-              <p className="eyebrow mb-4">Index</p>
+              <p className="eyebrow mb-4">
+                {lang === "zh" ? "目录" : "Index"}
+              </p>
               <ul className="grid grid-cols-2 gap-x-8 gap-y-2 sm:grid-cols-1">
                 {navItems.map((item) => (
                   <li key={item.href}>
@@ -32,7 +46,7 @@ export function Footer() {
                       href={item.href}
                       className="text-sm text-muted transition-colors hover:text-ink"
                     >
-                      {item.label}
+                      {pick(lang, item.label)}
                     </Link>
                   </li>
                 ))}
@@ -40,27 +54,23 @@ export function Footer() {
             </nav>
 
             <div>
-              <p className="eyebrow mb-4">Elsewhere</p>
+              <p className="eyebrow mb-4">
+                {lang === "zh" ? "其他平台" : "Elsewhere"}
+              </p>
               <ul className="space-y-2">
-                {[
-                  { label: "Email", href: site.socials.email, external: false },
-                  { label: "GitHub", href: site.socials.github, external: true },
-                  { label: "LinkedIn", href: site.socials.linkedin, external: true },
-                ]
-                  .filter((link) => link.href)
-                  .map((link) => (
-                    <li key={link.label}>
-                      <a
-                        href={link.href}
-                        {...(link.external
-                          ? { target: "_blank", rel: "noopener noreferrer" }
-                          : {})}
-                        className="text-sm text-muted transition-colors hover:text-ink"
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
+                {socialLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      {...(link.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      className="text-sm text-muted transition-colors hover:text-ink"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -68,9 +78,9 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-2 border-t border-line pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {site.name}
+            © {new Date().getFullYear()} {pick(lang, site.name)}
           </p>
-          <p>{site.location}</p>
+          <p>{pick(lang, site.location)}</p>
         </div>
       </div>
     </footer>

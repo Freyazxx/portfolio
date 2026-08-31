@@ -3,11 +3,12 @@
 import { useRef } from "react";
 import { motion, useScroll, useSpring, useReducedMotion } from "framer-motion";
 import type { WorkflowStep } from "@/data/projects";
+import { useLang } from "@/lib/language";
+import { pick, type Localized, type Lang } from "@/lib/lang";
 
-const KIND_LABEL: Record<WorkflowStep["kind"], string> = {
-  input: "Input",
-  ai: "AI",
-  human: "Human",
+const KIND_LABEL: Record<Lang, Record<WorkflowStep["kind"], string>> = {
+  en: { input: "Input", ai: "AI", human: "Human" },
+  zh: { input: "输入", ai: "AI", human: "人工" },
 };
 
 const KIND_STYLE: Record<WorkflowStep["kind"], string> = {
@@ -25,8 +26,9 @@ export function AIWorkflow({
   principle,
 }: {
   steps: WorkflowStep[];
-  principle?: string;
+  principle?: Localized<string>;
 }) {
+  const { lang } = useLang();
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -55,7 +57,7 @@ export function AIWorkflow({
         <ol>
           {steps.map((s, i) => (
             <motion.li
-              key={s.step}
+              key={pick(lang, s.step)}
               initial={reduce ? false : { opacity: 0, x: -14 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -72,16 +74,16 @@ export function AIWorkflow({
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="font-serif text-xl leading-tight text-ink">
-                  {s.step}
+                  {pick(lang, s.step)}
                 </span>
                 <span
                   className={`rounded-full border px-2 py-0.5 font-mono text-[0.55rem] uppercase tracking-[0.15em] ${KIND_STYLE[s.kind]}`}
                 >
-                  {KIND_LABEL[s.kind]}
+                  {KIND_LABEL[lang][s.kind]}
                 </span>
               </div>
               <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">
-                {s.desc}
+                {pick(lang, s.desc)}
               </p>
             </motion.li>
           ))}
@@ -96,7 +98,7 @@ export function AIWorkflow({
           transition={{ duration: 0.8 }}
           className="mt-8 border-l border-accent pl-5 font-serif text-lg italic text-muted-strong"
         >
-          {principle}
+          {pick(lang, principle)}
         </motion.p>
       )}
     </div>

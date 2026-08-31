@@ -1,22 +1,31 @@
+"use client";
+
 import { site } from "@/data/site";
+import { useLang } from "@/lib/language";
+import { pick } from "@/lib/lang";
 import { Reveal } from "./motion/Reveal";
 
 /** Large editorial contact links. */
 export function Contact() {
+  const { lang } = useLang();
+
   const links = [
-    { label: "Email", href: site.socials.email, external: false },
+    { label: pick(lang, { en: "Email", zh: "邮箱" }), href: site.socials.email, external: false },
     { label: "GitHub", href: site.socials.github, external: true },
     { label: "LinkedIn", href: site.socials.linkedin, external: true },
-    { label: "Résumé", href: site.resume, external: false },
+    { label: pick(lang, { en: "Résumé", zh: "简历" }), href: site.resume, external: false },
   ].filter((link) => link.href);
 
   return (
     <div>
       <Reveal>
-        <h2 className="font-serif text-3xl md:text-5xl">Let&apos;s connect.</h2>
+        <h2 className="font-serif text-3xl md:text-5xl">
+          {lang === "zh" ? "让我们聊聊。" : "Let's connect."}
+        </h2>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-strong md:text-lg">
-          Open to global opportunities, collaborations and good conversations —
-          about language, AI, or what the world looks like from the road.
+          {lang === "zh"
+            ? "对全球性的机会、合作与好的对话保持开放——关于语言、AI，或是在路上的世界是什么样子。"
+            : "Open to global opportunities, collaborations and good conversations — about language, AI, or what the world looks like from the road."}
         </p>
       </Reveal>
 
