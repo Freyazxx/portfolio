@@ -27,28 +27,28 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: site.title.en,
-  description: site.description.en,
+  title: site.title.zh,
+  description: site.description.zh,
   openGraph: {
-    title: site.title.en,
-    description: site.description.en,
+    title: site.title.zh,
+    description: site.description.zh,
     url: site.url,
-    siteName: site.name.en,
+    siteName: site.name.zh,
     type: "website",
-    locale: "en_US",
+    locale: "zh_CN",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: site.title.en,
+        alt: site.title.zh,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: site.title.en,
-    description: site.description.en,
+    title: site.title.zh,
+    description: site.description.zh,
     images: ["/opengraph-image"],
   },
   robots: { index: true, follow: true },
@@ -61,7 +61,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="zh-CN"
       className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-paper text-ink">

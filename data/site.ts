@@ -8,9 +8,9 @@ import { L } from "@/lib/lang";
 export const site = {
   // Shared (language-independent)
   initials: "XZ",
-  email: "1208195321@qq.com",
+  email: "17711399625@163.com",
   socials: {
-    email: "mailto:1208195321@qq.com",
+    email: "mailto:17711399625@163.com",
     linkedin: "", // 暂无 LinkedIn 账户，留空则不显示；创建后可填入 URL
     github: "https://github.com/Freyazxx",
   },

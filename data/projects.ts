@@ -27,7 +27,7 @@ export const hcrProject = {
     "Huawei Global Customer Satisfaction Research",
     "华为全球客户满意度调研",
   ),
-  role: L("Project Management Intern", "项目管理实习生"),
+  role: L("User Operations & Research Intern", "用户运营与研究实习生"),
   period: L("May 2026 — Aug 2026", "2026 年 5 月 — 8 月"),
 
   overview: L(

@@ -28,6 +28,19 @@ export const education: ExperienceEntry[] = [
     ),
   },
   {
+    period: L("Summer 2024", "2024 年夏"),
+    role: L("International Education Program", "国际教育项目"),
+    org: L(
+      "University of California, Santa Barbara",
+      "加州大学圣塔芭芭拉分校",
+    ),
+    summary: L(
+      "A summer of study and travel at UC Santa Barbara — the kind of learning that never shows up on a transcript.",
+      "在加州大学圣塔芭芭拉分校学习与旅行的一个夏天——那种永远不会出现在成绩单上的学习。",
+    ),
+    href: "/ucsb",
+  },
+  {
     period: L("2021 — 2025", "2021 — 2025"),
     role: L("BA in Translation", "翻译学士"),
     org: L("Xi'an Shiyou University", "西安石油大学"),

@@ -11,15 +11,15 @@ import type { Lang } from "@/lib/lang";
 import { site } from "@/data/site";
 
 const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({
-  lang: "en",
+  lang: "zh",
   setLang: () => {},
 });
 
-/** Client-side language state — persisted to localStorage, defaults to English. */
+/** Client-side language state — persisted to localStorage, defaults to Chinese. */
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>(() => {
-    if (typeof window === "undefined") return "en";
-    return window.localStorage.getItem("lang") === "zh" ? "zh" : "en";
+    if (typeof window === "undefined") return "zh";
+    return window.localStorage.getItem("lang") === "en" ? "en" : "zh";
   });
 
   useEffect(() => {
