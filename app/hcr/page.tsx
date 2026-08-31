@@ -147,6 +147,16 @@ export default function HcrPage() {
         </div>
       </section>
 
+      {/* Takeaway */}
+      <section className="mt-24 border-t border-line pt-16 md:pt-20">
+        <Reveal>
+          <p className="eyebrow">What I take from it</p>
+          <p className="mt-6 max-w-3xl font-serif text-2xl leading-snug text-ink md:text-3xl">
+            {hcrProject.takeaway}
+          </p>
+        </Reveal>
+      </section>
+
       {/* Bottom spacer */}
       <div className="pb-24" />
     </div>

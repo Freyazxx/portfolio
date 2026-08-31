@@ -39,7 +39,7 @@ export const experience: ExperienceEntry[] = [
     org: "HCR 慧辰股份 · Technology Key Account Division",
     type: "Experience",
     summary:
-      "B2B interview outreach and multilingual QA for Huawei's global customer satisfaction research — 26+ languages, 300+ files.",
+      "Remote B2B interview outreach and multilingual QA for Huawei's global customer satisfaction research — 26+ languages, 300+ files, coordinated entirely online.",
     href: "/hcr",
     featured: true,
   },

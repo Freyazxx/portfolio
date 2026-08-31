@@ -94,6 +94,16 @@ export default function AiLanguagePage() {
         </ol>
       </section>
 
+      {/* Takeaway */}
+      <section className="mt-20 border-t border-line pt-16 md:pt-20">
+        <Reveal>
+          <p className="eyebrow">What I take from it</p>
+          <p className="mt-6 max-w-3xl font-serif text-2xl leading-snug text-ink md:text-3xl">
+            {aiLanguageProject.takeaway}
+          </p>
+        </Reveal>
+      </section>
+
       <div className="pb-24" />
     </div>
   );

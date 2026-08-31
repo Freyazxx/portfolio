@@ -103,7 +103,6 @@ Search for `TODO` in `data/` — these need your real details before sharing:
 - deployed domain (`data/site.ts` → `url`)
 - HCR internship exact dates (`data/projects.ts`, `data/experience.ts`)
 - FISU story text (`app/global-events/page.tsx`) — photos already in place
-- UCSB & HCR photos (`data/gallery.ts`) — still elegant placeholders
 
 ## Language / i18n
 

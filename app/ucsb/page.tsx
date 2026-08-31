@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
-import { PhotoGrid } from "@/components/PhotoGrid";
 import { Reveal } from "@/components/motion/Reveal";
-import { ucsbPhotos } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "UCSB — California, 2024 · Xiaoxuan Zhou",
@@ -40,10 +38,6 @@ export default function UcsbPage() {
             Pacific, and a lot of firsts.
           </p>
         </Reveal>
-      </section>
-
-      <section className="mt-14 md:mt-20">
-        <PhotoGrid photos={ucsbPhotos} />
       </section>
 
       <section className="mt-20 pb-24 md:mt-28">
