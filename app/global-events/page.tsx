@@ -139,17 +139,13 @@ export default function GlobalEventsPage() {
         />
       </section>
 
-      {/* FISU — placeholder, add content when available */}
+      {/* FISU — photographs in place, story to be expanded */}
       <section className="mt-24 border-t border-line pt-16 md:mt-32 md:pt-24">
         <Reveal>
           <SectionHeading
-            eyebrow="Upcoming · FISU"
+            eyebrow="FISU"
             title="FISU World University Games"
-            description={
-              // TODO: add your role, responsibilities and story for the 31st
-              // FISU World University Games once details are confirmed.
-              "A second chapter — details and photographs coming soon."
-            }
+            description="Photographs from the FISU World University Games — the full story to come."
           />
         </Reveal>
         <div className="mt-10">

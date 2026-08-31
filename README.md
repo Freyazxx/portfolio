@@ -100,11 +100,10 @@ Recommended size: ~1600px on the long edge, JPEG, under ~500 KB for fast loads.
 
 Search for `TODO` in `data/` — these need your real details before sharing:
 
-- email, GitHub (`data/site.ts`) — LinkedIn optional (leave `""`)
-- résumé file — drop `resume.pdf` into `public/` (`data/site.ts`)
-- HCR internship exact dates (`data/projects.ts`, `data/experience.ts`)
-- FISU content + photos (`app/global-events/page.tsx`, `data/gallery.ts`)
 - deployed domain (`data/site.ts` → `url`)
+- HCR internship exact dates (`data/projects.ts`, `data/experience.ts`)
+- FISU story text (`app/global-events/page.tsx`) — photos already in place
+- UCSB & HCR photos (`data/gallery.ts`) — still elegant placeholders
 
 ## Language / i18n
 

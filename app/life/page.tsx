@@ -35,9 +35,6 @@ const grid: GridItem[] = [
   { type: "text", text: "Books that stayed with me." },
   { type: "photo", photo: lifePhotos[5] },
   { type: "photo", photo: lifePhotos[6] },
-  { type: "text", text: "Moments worth remembering." },
-  { type: "photo", photo: lifePhotos[7] },
-  { type: "photo", photo: lifePhotos[8] },
 ];
 
 export default function LifePage() {
