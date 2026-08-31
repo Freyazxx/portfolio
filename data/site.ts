@@ -17,7 +17,7 @@ export const site = {
   resume: "/resume.pdf", // TODO: drop resume.pdf into /public
 
   // --- SEO / shared URL ---
-  url: "https://portfolio-t3bx.vercel.app",
+  url: "https://xiaoxuanzhou.vercel.app",
 
   // Localized
   name: L("Xiaoxuan Zhou", "周晓萱"),
