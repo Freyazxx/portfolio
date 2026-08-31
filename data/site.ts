@@ -22,7 +22,7 @@ export const site = {
   email: "1208195321@qq.com",
   socials: {
     email: "mailto:1208195321@qq.com",
-    linkedin: "https://www.linkedin.com/in/your-handle", // TODO
+    linkedin: "", // 暂无 LinkedIn 账户，留空则不显示；创建后可填入 URL
     github: "https://github.com/Freyazxx",
   },
   resume: "/resume.pdf", // TODO: drop resume.pdf into /public

@@ -42,34 +42,25 @@ export function Footer() {
             <div>
               <p className="eyebrow mb-4">Elsewhere</p>
               <ul className="space-y-2">
-                <li>
-                  <a
-                    href={site.socials.email}
-                    className="text-sm text-muted transition-colors hover:text-ink"
-                  >
-                    Email
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={site.socials.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-muted transition-colors hover:text-ink"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={site.socials.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-muted transition-colors hover:text-ink"
-                  >
-                    GitHub
-                  </a>
-                </li>
+                {[
+                  { label: "Email", href: site.socials.email, external: false },
+                  { label: "GitHub", href: site.socials.github, external: true },
+                  { label: "LinkedIn", href: site.socials.linkedin, external: true },
+                ]
+                  .filter((link) => link.href)
+                  .map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        {...(link.external
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                        className="text-sm text-muted transition-colors hover:text-ink"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>

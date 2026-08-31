@@ -59,8 +59,9 @@ public/images/        # your photos (see below)
 
 All text lives in `data/` — you should never need to touch a component:
 
-- **`data/site.ts`** — name, tagline, email, LinkedIn/GitHub URLs, résumé link,
-  site URL (SEO). **Replace the `TODO` placeholders first.**
+- **`data/site.ts`** — name, tagline, email, GitHub URL, résumé link,
+  site URL (SEO). LinkedIn is optional — leave `linkedin: ""` to hide it.
+  **Replace the `TODO` placeholders first.**
 - **`data/experience.ts`** — the timeline (education + work).
 - **`data/projects.ts`** — the HCR case study, the MT+PE project, and the AI
   workflow steps.
@@ -99,7 +100,7 @@ Recommended size: ~1600px on the long edge, JPEG, under ~500 KB for fast loads.
 
 Search for `TODO` in `data/` — these need your real details before sharing:
 
-- email, LinkedIn, GitHub (`data/site.ts`)
+- email, GitHub (`data/site.ts`) — LinkedIn optional (leave `""`)
 - résumé file — drop `resume.pdf` into `public/` (`data/site.ts`)
 - HCR internship exact dates (`data/projects.ts`, `data/experience.ts`)
 - FISU content + photos (`app/global-events/page.tsx`, `data/gallery.ts`)

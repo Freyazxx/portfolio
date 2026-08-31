@@ -5,14 +5,10 @@ import { Reveal } from "./motion/Reveal";
 export function Contact() {
   const links = [
     { label: "Email", href: site.socials.email, external: false },
-    {
-      label: "LinkedIn",
-      href: site.socials.linkedin,
-      external: true,
-    },
     { label: "GitHub", href: site.socials.github, external: true },
+    { label: "LinkedIn", href: site.socials.linkedin, external: true },
     { label: "Résumé", href: site.resume, external: false },
-  ];
+  ].filter((link) => link.href);
 
   return (
     <div>
